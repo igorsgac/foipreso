@@ -75,17 +75,19 @@ app.use((req, res, next) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>DOMÍNIO À VENDA - foipreso.com.br</title>
             <style>
-                :root { --primary: #cc0000; --dark: #121212; --card-bg: #1e1e1e; --text: #ffffff; }
-                body { font-family: sans-serif; background-color: var(--dark); color: var(--text); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-                .container { background-color: var(--card-bg); padding: 40px; border-radius: 12px; max-width: 550px; width: 90%; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.7); border-top: 5px solid var(--primary); }
-                .badge { background-color: var(--primary); color: white; padding: 6px 16px; font-weight: bold; border-radius: 20px; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
-                .domain-name { color: var(--primary); font-weight: bold; background: rgba(204, 0, 0, 0.1); padding: 8px 15px; border-radius: 6px; display: inline-block; font-family: monospace; font-size: 1.5rem; margin-bottom: 25px; }
-                .price-box { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; margin-bottom: 25px; border: 1px solid #333; }
-                .price-usd { font-size: 2.5rem; font-weight: 800; color: #2ecc71; }
+                :root { --verde: #009739; --amarelo: #fedd00; --azul: #012169; --branco: #ffffff; --dark: #002b11; }
+                body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: radial-gradient(circle at center, #004d1e 0%, var(--dark) 100%); color: var(--branco); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+                .container { background-color: rgba(0, 77, 30, 0.8); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; max-width: 550px; width: 90%; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--amarelo); position: relative; overflow: hidden; }
+                .container::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--verde), var(--amarelo), var(--azul)); }
+                .badge { background-color: var(--amarelo); color: var(--dark); padding: 6px 18px; font-weight: 900; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; box-shadow: 0 4px 15px rgba(254, 221, 0, 0.3); }
+                .domain-name { color: var(--amarelo); font-weight: bold; background: rgba(0, 0, 0, 0.3); padding: 12px 25px; border-radius: 12px; display: inline-block; font-family: 'Courier New', monospace; font-size: 1.8rem; margin-bottom: 25px; border: 1px dashed var(--verde); }
+                .price-box { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-bottom: 25px; border: 1px solid rgba(254, 221, 0, 0.2); }
+                .price-usd { font-size: 3rem; font-weight: 900; color: var(--amarelo); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
                 .payment-methods { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
-                .method { background: #2a2a2a; padding: 8px 15px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; border: 1px solid #444; }
-                .method.pix { color: #32bcad; border-color: #32bcad; }
-                .btn-contact { display: block; width: 100%; background: var(--primary); color: white; text-decoration: none; padding: 15px; border-radius: 6px; font-weight: bold; font-size: 1.1rem; text-align:center;}
+                .method { background: var(--azul); color: white; padding: 8px 15px; border-radius: 8px; font-size: 0.8rem; font-weight: bold; border: 1px solid rgba(255,255,255,0.2); }
+                .method.pix { background: #32bcad; color: var(--dark); border: none; }
+                .btn-contact { display: block; width: 100%; background: linear-gradient(135deg, var(--verde) 0%, #007a2e 100%); color: white; text-decoration: none; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.2rem; text-align:center; transition: transform 0.2s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 1px solid var(--amarelo); }
+                .btn-contact:hover { transform: scale(1.02); brightness: 1.1; }
             </style>
         </head>
         <body>
@@ -95,11 +97,11 @@ app.use((req, res, next) => {
                 <div class="domain-name">foipreso.com.br</div>
                 
                 <p style="color: #ccc; line-height: 1.5;">
-                    Adquira este domínio premium com alto potencial de viralização. Ideal para portais de humor, notícias policiais ou ferramentas criativas.
+                    Adquira este domínio premium com alto potencial de viralização no mercado brasileiro. Ideal para portais de notícias, utilidade pública ou projetos criativos.
                 </p>
 
                 <div class="price-box">
-                    <div class="price-usd">$ ${valorUSD},00 <span style="font-size: 1.2rem; font-weight: normal; color: #888;">USD</span></div>
+                    <div class="price-usd">$ ${valorUSD},00 <span style="font-size: 1.2rem; font-weight: normal; color: var(--branco); opacity: 0.7;">USD</span></div>
                     <div style="color: #aaa; margin-top: 5px;">Aproximadamente R$ ${valorBRL}</div>
                     
                     <div class="payment-methods">
