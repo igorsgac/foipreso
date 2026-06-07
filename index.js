@@ -77,6 +77,21 @@ app.use((req, res, next) => {
             <style>
                 :root { --verde: #009739; --amarelo: #fedd00; --azul: #012169; --branco: #ffffff; --dark: #002b11; }
                 body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: radial-gradient(circle at center, #004d1e 0%, var(--dark) 100%); color: var(--branco); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+                body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: radial-gradient(circle at center, #004d1e 0%, var(--dark) 100%); color: var(--branco); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; position: relative; }
+                body::after {
+                    content: "";
+                    background-image: url('https://www.brasildefato.com.br/wp-content/uploads/2024/09/image_processing20200419-23357-132z00q.jpeg');
+                    background-size: cover;
+                    background-position: center;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.1;
+                    z-index: -1;
+                    pointer-events: none;
+                }
                 .container { background-color: rgba(0, 77, 30, 0.8); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; max-width: 550px; width: 90%; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 2px solid var(--amarelo); position: relative; overflow: hidden; }
                 .container::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--verde), var(--amarelo), var(--azul)); }
                 .badge { background-color: var(--amarelo); color: var(--dark); padding: 6px 18px; font-weight: 900; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; box-shadow: 0 4px 15px rgba(254, 221, 0, 0.3); }
@@ -111,7 +126,7 @@ app.use((req, res, next) => {
                     </div>
                 </div>
 
-                <a href="mailto:seu-email@exemplo.com?subject=Interesse no dominio foipreso.com.br" class="btn-contact">
+                <a href="mailto:y6u7i8@gmail.com?subject=Interesse no dominio foipreso.com.br" class="btn-contact">
                     ENTRAR EM CONTATO PARA COMPRAR
                 </a>
             </div>
