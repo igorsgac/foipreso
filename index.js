@@ -90,7 +90,7 @@ app.use((req, res, next) => {
         </head>
         <body>
             <div class="container">
-                <div class="badge">Oportunidade Única</div>
+                <div class="badge">>>> Oportunidade Única</div>
                 <h1>Este domínio está à venda!</h1>
                 <div class="domain-name">foipreso.com.br</div>
                 
